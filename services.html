@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — TechThree</title>
+  <meta name="description" content="TechThree offers hardware-specific software services: embedded systems, signal processing, ML on the edge, and custom device integration.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">T</span>
+        <span>TechThree</span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" style="min-height: 60vh;">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="mono">Our Services</span>
+      <h1>Hardware-Specific <span class="text-gradient">Software Solutions</span></h1>
+      <p>We build software that understands the hardware it runs on — because the best products are engineered as one system.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="mono">What We Offer</span>
+          <h2>Software That Fits the Hardware</h2>
+          <p>Most software teams write code and hope the hardware keeps up. We start with the physics — sensors, signals, and circuits — then build the software layer to match.</p>
+        </div>
+        <div class="grid grid-2" style="gap: 2rem;">
+          <article class="card-3d animate-on-scroll">
+            <div class="card-icon" style="color: var(--accent-cyan);">🔧</div>
+            <h3>Embedded Systems</h3>
+            <p>Firmware and control software for microcontrollers, sensors, and custom PCBs. Real-time, low-power, and purpose-built.</p>
+            <ul style="margin-top: 1rem; padding-left: 1.2rem; color: var(--text-secondary);">
+              <li>Microcontroller firmware (ARM, ESP, STM32)</li>
+              <li>RTOS integration</li>
+              <li>Low-power optimisation</li>
+              <li>Custom PCB bring-up software</li>
+            </ul>
+          </article>
+          <article class="card-3d animate-on-scroll">
+            <div class="card-icon" style="color: var(--accent-purple);">📈</div>
+            <h3>Signal Processing</h3>
+            <p>Clean, filter, and interpret real-world sensor data with robust digital signal processing pipelines.</p>
+            <ul style="margin-top: 1rem; padding-left: 1.2rem; color: var(--text-secondary);">
+              <li>ECG, SpO₂, and NIBP signal chains</li>
+              <li>Noise reduction and artifact rejection</li>
+              <li>Feature extraction</li>
+              <li>Real-time streaming architecture</li>
+            </ul>
+          </article>
+          <article class="card-3d animate-on-scroll">
+            <div class="card-icon" style="color: var(--accent-teal);"></div>
+            <h3>Machine Learning on the Edge</h3>
+            <p>Deploy ML models directly on hardware for low-latency inference without relying on the cloud.</p>
+            <ul style="margin-top: 1rem; padding-left: 1.2rem; color: var(--text-secondary);">
+              <li>Anomaly detection models</li>
+              <li>Model quantisation and optimisation</li>
+              <li>On-device inference</li>
+              <li>Edge-to-hospital data pipelines</li>
+            </ul>
+          </article>
+          <article class="card-3d animate-on-scroll">
+            <div class="card-icon" style="color: var(--accent-cyan);"></div>
+            <h3>Device Integration</h3>
+            <p>Connect existing hardware to custom software platforms — LAN, serial, wireless, and medical-grade data flows.</p>
+            <ul style="margin-top: 1rem; padding-left: 1.2rem; color: var(--text-secondary);">
+              <li>Hospital network integration</li>
+              <li>Patient Management System interfaces</li>
+              <li>Secure local data routing</li>
+              <li>Legacy device modernisation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center;">
+          <div class="animate-on-scroll">
+            <span class="mono">Our Process</span>
+            <h2 class="text-gradient">From Sensor to Software</h2>
+            <p>Every engagement follows a simple, rigorous path: understand the hardware, design the signal path, build the software, validate with real data.</p>
+            <p>We do not believe in one-size-fits-all templates. Each service is scoped around the specific hardware you have and the outcome you need.</p>
+          </div>
+          <div class="feature-list animate-on-scroll">
+            <div class="feature-item">
+              <div class="feature-icon">1</div>
+              <div>
+                <h4>Discovery</h4>
+                <p>We map your hardware, data, and constraints.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">2</div>
+              <div>
+                <h4>Architecture</h4>
+                <p>We design the firmware, signal pipeline, and software stack as one.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">3</div>
+              <div>
+                <h4>Build & Validate</h4>
+                <p>We prototype, test against real hardware, and iterate.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">4</div>
+              <div>
+                <h4>Deploy & Support</h4>
+                <p>We hand over documented, production-ready code with ongoing support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--gradient-hero); text-align: center;">
+      <div class="container">
+        <div class="animate-on-scroll">
+          <h2>Have a Hardware Problem?</h2>
+          <p class="text-primary" style="color: var(--text-primary);">Tell us what you are building. We will help you design the software layer that makes your hardware shine.</p>
+          <a href="contact.html" class="btn btn-primary mt-2">Start a Project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">T</span>
+            <span>TechThree</span>
+          </a>
+          <p>A research-based Pakistani startup building hardware-integrated solutions in health, computation, and display.</p>
+          <p class="mono" style="color: var(--accent-cyan);">"Software is Nothing without Hardware"</p>
+        </div>
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="products.html#cardiovascular">Cardiovascular Monitor</a>
+          <a href="products.html#quantum">Quantum Drug Discovery</a>
+          <a href="products.html#hologram">Miniature Hologram</a>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/tech.3ree/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TechThree. All rights reserved.</p>
+        <p>Pakistan</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/three-hero.js"></script>
+</body>
+</html>

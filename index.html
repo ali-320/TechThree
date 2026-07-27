@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechThree — Software is Nothing without Hardware</title>
+  <meta name="description" content="TechThree is a Pakistani research-based startup building hardware-integrated solutions in health, computation, and display.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">T</span>
+        <span>TechThree</span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="mono">Research-Based · Hardware-Integrated · Pakistan</span>
+      <h1>Software is <span class="text-gradient">Nothing</span> without Hardware</h1>
+      <p>TechThree engineers the future where hardware and software are built as one. From wrist-side cardiovascular intelligence to quantum-assisted drug discovery and volumetric displays.</p>
+      <div class="hero-cta">
+        <a href="products.html" class="btn btn-primary">Explore Products</a>
+        <a href="contact.html" class="btn btn-outline">Work with Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="mono">What We Build</span>
+          <h2>Three Products, One Philosophy</h2>
+          <p>Every TechThree product demands deep hardware craftsmanship alongside its software layer. We do not build apps on commodity hardware — we engineer both as a single system.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card-3d animate-on-scroll">
+            <div class="card-icon" style="color: var(--accent-cyan);">❤️</div>
+            <h3>Cardiovascular Monitor</h3>
+            <p>A wrist-wearable that streams ECG, SpO₂, and NIBP to a hospital Patient Management System, with ML models that retrain on every doctor's verdict.</p>
+            <a href="products.html#cardiovascular" class="btn btn-outline mt-2" style="width: 100%;">Learn More</a>
+          </article>
+          <article class="card-3d animate-on-scroll">
+            <div class="card-icon" style="color: var(--accent-purple);">⚛️</div>
+            <h3>Quantum Drug Discovery</h3>
+            <p>A hybrid Quantum Neural Network that uses qubits and entanglement to represent molecular states classical compute cannot reach.</p>
+            <a href="products.html#quantum" class="btn btn-outline mt-2" style="width: 100%;">Learn More</a>
+          </article>
+          <article class="card-3d animate-on-scroll">
+            <div class="card-icon" style="color: var(--accent-teal);"></div>
+            <h3>Miniature Hologram</h3>
+            <p>A compact water-tank display that renders true volumetric imagery — viewable without glasses or headsets, from multiple angles.</p>
+            <a href="products.html#hologram" class="btn btn-outline mt-2" style="width: 100%;">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="mono">Why Now</span>
+          <h2>Pakistan's Healthcare Gap, Solved at the Wrist</h2>
+          <p>Cardiovascular disease is the leading killer in Pakistan. We bring world-class remote monitoring to the hospitals that need it most.</p>
+        </div>
+        <div class="grid grid-4">
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number">918.18</div>
+            <div class="stat-label">CVD incidence per 100k</div>
+          </div>
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number">1.09</div>
+            <div class="stat-label">Doctors per 1,000 people</div>
+          </div>
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number">63%</div>
+            <div class="stat-label">Population in rural areas</div>
+          </div>
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number">34M</div>
+            <div class="stat-label">Households with CVD history</div>
+          </div>
+        </div>
+        <div class="text-center mt-2 animate-on-scroll">
+          <p>Mayo Clinic's remote monitoring program has shown a <strong class="text-cyan">9.4% 30-day readmission rate</strong> and <strong class="text-cyan">72.5% patient compliance</strong>. TechThree adapts that model for Pakistan's hospitals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="mono">Beyond Products</span>
+          <h2>Hardware-Specific Software Services</h2>
+          <p>We also partner with clients who need software that makes the most of their hardware — embedded systems, device firmware, sensor integration, and custom analytics.</p>
+        </div>
+        <div class="grid grid-2" style="align-items: center;">
+          <div class="animate-on-scroll">
+            <h3 class="text-gradient">Engineered as One System</h3>
+            <p>Most software agencies write code. We design the full stack: the sensor, the signal path, the firmware, the algorithm, and the interface. That is what makes our services different.</p>
+            <a href="services.html" class="btn btn-primary mt-1">See Our Services</a>
+          </div>
+          <div class="feature-list animate-on-scroll">
+            <div class="feature-item">
+              <div class="feature-icon">🔧</div>
+              <div>
+                <h4>Embedded Systems</h4>
+                <p>Firmware and control software for microcontrollers, sensors, and custom boards.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <div>
+                <h4>Signal Processing</h4>
+                <p>Clean, filter, and interpret real-world sensor data with robust DSP pipelines.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🤖</div>
+              <div>
+                <h4>ML on the Edge</h4>
+                <p>Deploy machine-learning models directly on hardware for low-latency inference.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--gradient-hero); text-align: center;">
+      <div class="container">
+        <div class="animate-on-scroll">
+          <h2>Ready to Build Something Beautiful?</h2>
+          <p class="text-primary" style="color: var(--text-primary);">Whether you are a hospital, a research partner, or an enterprise with a hardware problem — we would love to hear from you.</p>
+          <a href="contact.html" class="btn btn-primary mt-2">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">T</span>
+            <span>TechThree</span>
+          </a>
+          <p>A research-based Pakistani startup building hardware-integrated solutions in health, computation, and display.</p>
+          <p class="mono" style="color: var(--accent-cyan);">"Software is Nothing without Hardware"</p>
+        </div>
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="products.html#cardiovascular">Cardiovascular Monitor</a>
+          <a href="products.html#quantum">Quantum Drug Discovery</a>
+          <a href="products.html#hologram">Miniature Hologram</a>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/tech.3ree/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TechThree. All rights reserved.</p>
+        <p>Pakistan</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/three-hero.js"></script>
+</body>
+</html>

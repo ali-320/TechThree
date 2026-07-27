@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — TechThree</title>
+  <meta name="description" content="Explore TechThree's three hardware-integrated products: wrist-side cardiovascular monitoring, quantum drug discovery, and miniature holography.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">T</span>
+        <span>TechThree</span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" style="min-height: 60vh;">
+    <canvas id="products-canvas" class="hero-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="mono">Our Products</span>
+      <h1>Hardware & Software, <span class="text-gradient">Built as One</span></h1>
+      <p>Three product lines. One conviction: the most worthwhile technology is born when hardware and software are engineered together.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="cardiovascular" class="product-section">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center;">
+          <div class="animate-on-scroll">
+            <span class="product-tag cyan">Product 01 — Health</span>
+            <h2>Wrist-Worn Cardiovascular Monitor</h2>
+            <p>Continuous ECG, SpO₂, and NIBP monitoring that streams over LAN to a hospital-side Patient Management System. Three machine-learning models detect anomalies; every physician verdict retrains them to work better for Pakistani patients.</p>
+            <ul class="feature-list" style="margin-top: 1.5rem;">
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan);">1</div>
+                <div>
+                  <h4>Continuous Vital Capture</h4>
+                  <p>One lightweight wrist device captures ECG, oxygen saturation, and non-invasive blood pressure in near real time.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan);">2</div>
+                <div>
+                  <h4>Three-Model Anomaly Detection</h4>
+                  <p>Specialised ML models analyse the live vital stream alongside manually entered clinical data, pushing alerts to the on-call physician.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan);">3</div>
+                <div>
+                  <h4>Reinforcement Learning Loop</h4>
+                  <p>Physicians confirm or reject alerts, and that feedback becomes the training signal that localises the models to Pakistani demographics.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="card-3d animate-on-scroll" style="text-align: center; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div style="font-size: 6rem; margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.4));">⌚</div>
+            <h3 class="text-cyan">Hospital-Grade, Wrist-Sized</h3>
+            <p>Validated by Shifa International Hospital's Biomedical Engineering department — if it delivers reliable SpO₂ and NIBP, the buyer is ready.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quantum" class="product-section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center;">
+          <div class="order-2 animate-on-scroll" style="order: 2;">
+            <span class="product-tag purple">Product 02 — Computation</span>
+            <h2>Hybrid Quantum Neural Network for Drug Discovery</h2>
+            <p>Qubits and entanglement run the molecular-representation layer of a hybrid quantum-classical model, while a classical optimiser drives training and output.</p>
+            <ul class="feature-list" style="margin-top: 1.5rem;">
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(138, 43, 226, 0.15); color: var(--accent-purple);">1</div>
+                <div>
+                  <h4>Quantum Representation</h4>
+                  <p>Qubits encode molecular structures in a high-dimensional state space that classical bits cannot efficiently represent.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(138, 43, 226, 0.15); color: var(--accent-purple);">2</div>
+                <div>
+                  <h4>Classical Optimisation</h4>
+                  <p>A classical optimiser handles training; the quantum layer handles the parts of the computation where qubits deliver genuine advantage.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(138, 43, 226, 0.15); color: var(--accent-purple);">3</div>
+                <div>
+                  <h4>Pre-Validated Candidates</h4>
+                  <p>The model produces a ranked candidate set with confidence scores, formatted for direct hand-off into wet-lab assays.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="card-3d animate-on-scroll" style="text-align: center; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; order: 1;">
+            <div style="font-size: 6rem; margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.4));">⚛️</div>
+            <h3 class="text-purple">Research Roadmap</h3>
+            <p>Currently being developed as a Final Year Project, with a licensable model architecture that any pharma partner or research lab can use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hologram" class="product-section">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center;">
+          <div class="animate-on-scroll">
+            <span class="product-tag teal">Product 03 — Display</span>
+            <h2>Miniature Underwater Hologram</h2>
+            <p>A compact water-tank display that renders true volumetric imagery through programmable light interference — viewable by several observers at once, without glasses or headsets.</p>
+            <ul class="feature-list" style="margin-top: 1.5rem;">
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(20, 184, 166, 0.15); color: var(--accent-teal);">1</div>
+                <div>
+                  <h4>True Volumetric Projection</h4>
+                  <p>Engineered interference patterns reconstruct real 3D volumes inside a controlled water tank.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(20, 184, 166, 0.15); color: var(--accent-teal);">2</div>
+                <div>
+                  <h4>Compact Form Factor</h4>
+                  <p>The water column acts as part of the optical path, shrinking the device to a desktop or benchtop unit.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(20, 184, 166, 0.15); color: var(--accent-teal);">3</div>
+                <div>
+                  <h4>Programmable Content</h4>
+                  <p>Update content frame-by-frame — medical imaging, scientific visualisation, and interactive 3D content from one render engine.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="card-3d animate-on-scroll" style="text-align: center; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div style="font-size: 6rem; margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(20, 184, 166, 0.4));">🔮</div>
+            <h3 class="text-teal">The Next Display Medium</h3>
+            <p>Built for medical visualisation, telemedicine interfaces, and immersive patient education — the post-mobile display category.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">T</span>
+            <span>TechThree</span>
+          </a>
+          <p>A research-based Pakistani startup building hardware-integrated solutions in health, computation, and display.</p>
+          <p class="mono" style="color: var(--accent-cyan);">"Software is Nothing without Hardware"</p>
+        </div>
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="products.html#cardiovascular">Cardiovascular Monitor</a>
+          <a href="products.html#quantum">Quantum Drug Discovery</a>
+          <a href="products.html#hologram">Miniature Hologram</a>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/tech.3ree/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TechThree. All rights reserved.</p>
+        <p>Pakistan</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/three-products.js"></script>
+</body>
+</html>
