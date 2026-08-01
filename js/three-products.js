@@ -35,7 +35,7 @@
       antialias: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    resizeRenderer();
 
     // Heart-like shape (Product 1) — using a sphere as abstraction
     const heartGeometry = new THREE.IcosahedronGeometry(30, 0);
@@ -81,10 +81,16 @@
     animate();
   }
 
-  function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+  function resizeRenderer() {
+    const width = canvas.clientWidth || window.innerWidth;
+    const height = canvas.clientHeight || window.innerHeight;
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height, false);
+  }
+
+  function onWindowResize() {
+    resizeRenderer();
   }
 
   function animate() {

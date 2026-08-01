@@ -182,9 +182,13 @@ p {
   gap: 2rem;
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.grid > * {
+  min-width: 0;
+}
 
 /* --------------------------------------------------------------------------
    Navigation
@@ -793,55 +797,301 @@ p {
    Responsive
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  :root {
+    --section-padding: 5rem 0;
+  }
+
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .card-3d,
+  .contact-form {
+    padding: 1.75rem;
+  }
 }
 
 @media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem 0;
+    --container-padding: 0 1rem;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .navbar .container {
+    min-height: 44px;
+  }
+
+  .logo {
+    gap: 0.55rem;
+    font-size: 1.25rem;
+  }
+
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+  }
+
+  .tt-mark {
+    font-size: 1rem;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
+    right: 0;
+    width: min(86vw, 320px);
     height: 100vh;
-    background: var(--bg-secondary);
+    height: 100dvh;
+    background: rgba(17, 24, 39, 0.98);
+    backdrop-filter: blur(18px);
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 2rem;
-    gap: 1.5rem;
-    transition: right var(--transition-base);
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 6rem 1.5rem 2rem;
+    gap: 0.35rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -18px 0 50px rgba(0, 0, 0, 0.35);
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: auto;
+    transition: transform var(--transition-base), opacity var(--transition-base), visibility var(--transition-base);
   }
 
   .nav-links.open {
     right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0.75rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+  }
+
+  .nav-links a::after {
+    left: 0.75rem;
+    bottom: 0.35rem;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
     z-index: 1001;
+    border-radius: 8px;
+  }
+
+  .mobile-menu-btn:hover,
+  .mobile-menu-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .grid-2,
   .grid-3,
   .grid-4 {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero[style] {
+    min-height: 72svh !important;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 5.5rem 1rem 2rem;
+  }
+
+  .hero .mono {
+    max-width: 32rem;
+    margin-bottom: 1rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 10.5vw, 3.5rem);
+    overflow-wrap: break-word;
+    margin-bottom: 1.15rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
   }
 
   .hero-cta {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    width: min(100%, 20rem);
+    margin: 0 auto;
   }
 
   .btn {
     width: 100%;
-    max-width: 280px;
+    min-height: 44px;
+    max-width: none;
+  }
+
+  .section,
+  .product-section {
+    padding: 4rem 0;
+  }
+
+  h2,
+  h3,
+  h4 {
+    overflow-wrap: break-word;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .card-3d {
+    padding: 1.35rem;
+    border-radius: 13px;
+  }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1.1rem;
+    font-size: 1.5rem;
+  }
+
+  .feature-item {
+    gap: 0.75rem;
+    padding: 0.85rem;
+  }
+
+  .feature-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .product-section .grid-2 > * {
+    width: 100%;
+  }
+
+  .product-section .card-3d {
+    min-height: 220px !important;
+  }
+
+  .product-section .card-3d > div:first-child {
+    font-size: 4.5rem !important;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+    border-radius: 13px;
+  }
+
+  .form-group {
+    margin-bottom: 1.1rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    min-height: 44px;
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer {
+    padding: 2.5rem 0 1.25rem;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .social-links a {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --container-padding: 0 0.85rem;
+  }
+
+  .hero-content {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .card-3d,
+  .contact-form {
+    padding: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

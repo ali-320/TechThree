@@ -39,18 +39,68 @@ function initMobileMenu() {
 
   if (!menuBtn || !navLinks) return;
 
+  const setMenuState = (isOpen) => {
+    navLinks.classList.toggle('open', isOpen);
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    const isMobile = window.innerWidth <= 768;
+    navLinks.setAttribute('aria-hidden', String(isMobile && !isOpen));
+    navLinks.inert = isMobile && !isOpen;
+    document.body.classList.toggle('nav-open', isOpen);
+
+    if (isOpen) {
+      navLinks.querySelector('a')?.focus();
+    }
+  };
+
+  const updateNavAccessibility = () => {
+    const isMobile = window.innerWidth <= 768;
+    const isOpen = navLinks.classList.contains('open');
+    navLinks.setAttribute('aria-hidden', String(isMobile && !isOpen));
+    navLinks.inert = isMobile && !isOpen;
+  };
+
+  updateNavAccessibility();
+
   menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+    setMenuState(!navLinks.classList.contains('open'));
   });
 
-  // Close menu when clicking a link
+  // Close menu when clicking a link.
   navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', () => setMenuState(false));
   });
+
+  // Keep keyboard and viewport interactions from leaving the menu stuck open.
+  document.addEventListener('keydown', (event) => {
+    if (!navLinks.classList.contains('open')) return;
+
+    if (event.key === 'Escape') {
+      setMenuState(false);
+      menuBtn.focus();
+      return;
+    }
+
+    if (event.key === 'Tab') {
+      const focusableLinks = [...navLinks.querySelectorAll('a')];
+      const firstLink = focusableLinks[0];
+      const lastLink = focusableLinks[focusableLinks.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstLink) {
+        event.preventDefault();
+        lastLink.focus();
+      } else if (!event.shiftKey && document.activeElement === lastLink) {
+        event.preventDefault();
+        firstLink.focus();
+      }
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+      setMenuState(false);
+    }
+    updateNavAccessibility();
+  }, { passive: true });
 }
 
 /**
@@ -82,12 +132,11 @@ function initScrollAnimations() {
  * 3D tilt effect for cards on mouse move.
  */
 function init3DCardTilt() {
+  if (window.matchMedia('(pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+
   const cards = document.querySelectorAll('.card-3d');
 
   cards.forEach((card) => {
-    // Skip on touch devices
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;

@@ -43,7 +43,7 @@
       antialias: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    resizeRenderer();
 
     createParticles();
     createLines();
@@ -117,21 +117,28 @@
     scene.add(linesMesh);
   }
 
-  function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+  function resizeRenderer() {
+    const width = canvas.clientWidth || window.innerWidth;
+    const height = canvas.clientHeight || window.innerHeight;
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height, false);
+  }
+
+  function onWindowResize() {
+    resizeRenderer();
   }
 
   function onMouseMove(event) {
-    targetMouse.x = event.clientX;
-    targetMouse.y = event.clientY;
+    const rect = canvas.getBoundingClientRect();
+    targetMouse.x = event.clientX - rect.left;
+    targetMouse.y = event.clientY - rect.top;
   }
 
   function updateMouse() {
     const rect = canvas.getBoundingClientRect();
-    const x = targetMouse.x - rect.left;
-    const y = targetMouse.y - rect.top;
+    const x = targetMouse.x;
+    const y = targetMouse.y;
 
     if (x === undefined || y === undefined) return;
 
@@ -160,8 +167,8 @@
       if (mouse.x !== -9999) {
         const particleX = positions[i3];
         const particleY = positions[i3 + 1];
-        const screenX = (particleX / camera.position.z + 1) * window.innerWidth / 2;
-        const screenY = (-particleY / camera.position.z + 1) * window.innerHeight / 2;
+        const screenX = (particleX / camera.position.z + 1) * (canvas.clientWidth || window.innerWidth) / 2;
+        const screenY = (-particleY / camera.position.z + 1) * (canvas.clientHeight || window.innerHeight) / 2;
 
         const dx = screenX - targetMouse.x;
         const dy = screenY - targetMouse.y;
