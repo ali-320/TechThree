@@ -14,7 +14,6 @@
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
-        <span class="logo-icon"><span class="tt-mark">TT</span></span>
         <span>Tech-<span class="logo-three">3</span>ree</span>
       </a>
       <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
@@ -41,42 +40,29 @@
   </header>
 
   <main>
-    <section id="cardiovascular" class="product-section">
-      <div class="container">
-        <div class="grid grid-2" style="align-items: center;">
-          <div class="animate-on-scroll">
-            <span class="product-tag cyan">Product 01 — Health</span>
-            <h2>Wrist-Worn Cardiovascular Monitor</h2>
-            <p>Continuous ECG, SpO₂, and NIBP monitoring that streams over LAN to a hospital-side Patient Management System. Three machine-learning models detect anomalies; every physician verdict retrains them to work better for Pakistani patients.</p>
-            <ul class="feature-list" style="margin-top: 1.5rem;">
-              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
-                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan);">1</div>
-                <div>
-                  <h4>Continuous Vital Capture</h4>
-                  <p>One lightweight wrist device captures ECG, oxygen saturation, and non-invasive blood pressure in near real time.</p>
-                </div>
-              </li>
-              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
-                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan);">2</div>
-                <div>
-                  <h4>Three-Model Anomaly Detection</h4>
-                  <p>Specialised ML models analyse the live vital stream alongside manually entered clinical data, pushing alerts to the on-call physician.</p>
-                </div>
-              </li>
-              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
-                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan);">3</div>
-                <div>
-                  <h4>Reinforcement Learning Loop</h4>
-                  <p>Physicians confirm or reject alerts, and that feedback becomes the training signal that localises the models to Pakistani demographics.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="card-3d animate-on-scroll" style="text-align: center; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <div style="font-size: 6rem; margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.4));">⌚</div>
-            <h3 class="text-cyan">Hospital-Grade, Wrist-Sized</h3>
-            <p>Validated by Shifa International Hospital's Biomedical Engineering department — if it delivers reliable SpO₂ and NIBP, the buyer is ready.</p>
-          </div>
+    <!-- ── Cardiovascular Monitor — Interactive 3D Architecture ────────────── -->
+    <section id="cardiovascular" class="cviz-section">
+      <div style="padding: 3rem 1.5rem 1.5rem; text-align: center; background: var(--bg-secondary);">
+        <span class="product-tag cyan">Product 01 — Health</span>
+        <h2>Wrist-Worn Cardiovascular Monitor</h2>
+        <p style="max-width: 720px; margin: 0 auto; color: var(--text-secondary);">A wrist wearable that streams ECG, SpO₂, and NIBP to a hospital Patient Management System, with ML models that retrain on every doctor's verdict.</p>
+      </div>
+      <div class="cviz-container" id="cviz-container">
+        <canvas id="cviz-canvas"></canvas>
+        <div class="cviz-cross"></div>
+        <button class="cviz-back-btn" id="cviz-back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Back to Hardware
+        </button>
+        <div class="cviz-info-panel" id="cviz-info">
+          <h4></h4>
+          <p></p>
+        </div>
+        <div class="cviz-hint visible" id="cviz-hint">
+          <span class="cviz-hint-text">Click the WiFi signal to see the software architecture →</span>
+        </div>
+        <div class="cviz-hint visible" id="cviz-rotate-hint" style="bottom: 64px;">
+          <span class="cviz-hint-text">🖱 Drag to rotate the 3D view</span>
         </div>
       </div>
     </section>
@@ -167,8 +153,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <span class="logo-icon"><span class="tt-mark">TT</span></span>
-            <span>Tech-<span class="logo-three">3</span>ree</span>
+                <span>Tech-<span class="logo-three">3</span>ree</span>
           </a>
           <p>A research-based Pakistani startup building hardware-integrated solutions in health, computation, and display.</p>
           <p class="mono" style="color: var(--accent-cyan);">"Software is Nothing without Hardware"</p>
@@ -200,7 +185,8 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/three-products.js"></script>
+  <script src="js/cardiovascular.js"></script>
 </body>
 </html>

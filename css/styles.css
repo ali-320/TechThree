@@ -224,20 +224,6 @@ p {
   font-weight: 700;
   color: var(--text-primary);
 }
-
-.logo-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: var(--gradient-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: var(--bg-primary);
-  box-shadow: var(--shadow-glow-cyan);
-}
-
 .logo-three {
   display: inline-block;
   font-size: 1.35em;
@@ -250,16 +236,6 @@ p {
   -webkit-text-fill-color: transparent;
   margin: 0 0.02em;
 }
-
-.tt-mark {
-  font-weight: 900;
-  letter-spacing: -0.12em;
-  font-size: 1.15rem;
-  line-height: 1;
-  color: var(--text-primary);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-}
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -677,6 +653,208 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Cardiovascular 3D Visualization
+   -------------------------------------------------------------------------- */
+.cviz-section {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cviz-container {
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  min-height: 620px;
+  max-height: 920px;
+  background: #050810;
+  overflow: hidden;
+}
+
+.cviz-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cviz-cross {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cviz-cross::before,
+.cviz-cross::after {
+  content: '';
+  position: absolute;
+  background: #EF4444;
+  border-radius: 2px;
+}
+
+.cviz-cross::before {
+  width: 8px;
+  height: 48px;
+}
+
+.cviz-cross::after {
+  width: 48px;
+  height: 8px;
+}
+
+.cviz-back-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 0.6rem 1.2rem;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.cviz-back-btn:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--accent-cyan);
+}
+
+.cviz-back-btn.visible {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cviz-info-panel {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 14, 20, 0.92);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 12px;
+  padding: 1.2rem 1.8rem;
+  z-index: 10;
+  max-width: 500px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.cviz-info-panel.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.cviz-info-panel h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.4rem;
+}
+
+.cviz-info-panel p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.cviz-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cviz-hint.visible {
+  opacity: 1;
+}
+
+.cviz-hint-text {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(11, 14, 20, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .cviz-container {
+    height: 65vh;
+    min-height: 400px;
+  }
+
+  .cviz-cross {
+    width: 44px;
+    height: 44px;
+    top: 16px;
+    right: 16px;
+  }
+
+  .cviz-cross::before {
+    width: 6px;
+    height: 36px;
+  }
+
+  .cviz-cross::after {
+    width: 36px;
+    height: 6px;
+  }
+
+  .cviz-back-btn {
+    top: 16px;
+    left: 16px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .cviz-info-panel {
+    left: 1rem;
+    right: 1rem;
+    transform: translateX(0) translateY(10px);
+    max-width: none;
+    bottom: 16px;
+  }
+
+  .cviz-info-panel.visible {
+    transform: translateX(0) translateY(0);
+  }
+
+  .cviz-hint {
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    bottom: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 .footer {
@@ -835,16 +1013,6 @@ p {
   .logo {
     gap: 0.55rem;
     font-size: 1.25rem;
-  }
-
-  .logo-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 7px;
-  }
-
-  .tt-mark {
-    font-size: 1rem;
   }
 
   .nav-links {
@@ -1068,11 +1236,6 @@ p {
 
   .logo {
     font-size: 1.1rem;
-  }
-
-  .logo-icon {
-    width: 32px;
-    height: 32px;
   }
 
   .hero h1 {
