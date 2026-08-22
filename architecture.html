@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture — Remote Health Monitor — Tech-3ree</title>
+  <meta name="description" content="Interactive 3D architecture of Tech-3ree's Remote Health Monitoring System — hardware and software views with orbiting sensors and data flow.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span>Tech-<span class="logo-three">3</span>ree</span>
+      </a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <div class="nav-links" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="cviz-section" style="min-height: 100vh;">
+      <div style="padding: 2rem 1.5rem 1rem; text-align: center; background: var(--bg-secondary);">
+        <a href="products.html" style="display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan); text-decoration: none; margin-bottom: 1rem; opacity: 0.8; transition: opacity 0.3s;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Back to Products
+        </a>
+        <span class="product-tag cyan">Product 01 — Health</span>
+        <h2>Wrist-Worn Cardiovascular Monitor</h2>
+        <p style="max-width: 720px; margin: 0 auto; color: var(--text-secondary);">Interactive 3D architecture — drag to rotate, click the WiFi signal to switch between hardware and software views.</p>
+      </div>
+      <div class="cviz-container" id="cviz-container">
+        <canvas id="cviz-canvas"></canvas>
+        <div class="cviz-cross"></div>
+        <button class="cviz-drag-btn" id="cviz-drag-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m11.14 0l-2.83-2.83M9.76 9.76L6.93 6.93"></path></svg>
+          <span id="cviz-drag-text">Enable Drag</span>
+        </button>
+        <button class="cviz-fullscreen-btn" id="cviz-fullscreen-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          Exit Fullscreen
+        </button>
+        <button class="cviz-back-btn" id="cviz-back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Back to Hardware
+        </button>
+        <div class="cviz-info-panel" id="cviz-info">
+          <h4></h4>
+          <p></p>
+        </div>
+        <div class="cviz-hint visible" id="cviz-hint">
+          <span class="cviz-hint-text">Click the WiFi signal to see the software architecture →</span>
+        </div>
+        <div class="cviz-hint visible" id="cviz-rotate-hint" style="bottom: 64px;">
+          <span class="cviz-hint-text">🖱 Drag to rotate the 3D view</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span>Tech-<span class="logo-three">3</span>ree</span>
+          </a>
+          <p>A research-based Pakistani startup building hardware-integrated solutions in health, computation, and display.</p>
+          <p class="mono" style="color: var(--accent-cyan);">"Software is Nothing without Hardware"</p>
+        </div>
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="products.html#cardiovascular">Cardiovascular Monitor</a>
+          <a href="products.html#quantum">Quantum Drug Discovery</a>
+          <a href="products.html#hologram">Miniature Hologram</a>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/tech.3ree/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Tech-3ree. All rights reserved.</p>
+        <p>Pakistan</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cardiovascular.js"></script>
+</body>
+</html>

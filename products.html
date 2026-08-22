@@ -40,37 +40,43 @@
   </header>
 
   <main>
-    <!-- ── Cardiovascular Monitor — Interactive 3D Architecture ────────────── -->
-    <section id="cardiovascular" class="cviz-section">
-      <div style="padding: 3rem 1.5rem 1.5rem; text-align: center; background: var(--bg-secondary);">
-        <span class="product-tag cyan">Product 01 — Health</span>
-        <h2>Wrist-Worn Cardiovascular Monitor</h2>
-        <p style="max-width: 720px; margin: 0 auto; color: var(--text-secondary);">A wrist wearable that streams ECG, SpO₂, and NIBP to a hospital Patient Management System, with ML models that retrain on every doctor's verdict.</p>
-      </div>
-      <div class="cviz-container" id="cviz-container">
-        <canvas id="cviz-canvas"></canvas>
-        <div class="cviz-cross"></div>
-        <button class="cviz-drag-btn" id="cviz-drag-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m11.14 0l-2.83-2.83M9.76 9.76L6.93 6.93"></path></svg>
-          <span id="cviz-drag-text">Enable Drag</span>
-        </button>
-        <button class="cviz-fullscreen-btn" id="cviz-fullscreen-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-          Exit Fullscreen
-        </button>
-        <button class="cviz-back-btn" id="cviz-back">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          Back to Hardware
-        </button>
-        <div class="cviz-info-panel" id="cviz-info">
-          <h4></h4>
-          <p></p>
-        </div>
-        <div class="cviz-hint visible" id="cviz-hint">
-          <span class="cviz-hint-text">Click the WiFi signal to see the software architecture →</span>
-        </div>
-        <div class="cviz-hint visible" id="cviz-rotate-hint" style="bottom: 64px;">
-          <span class="cviz-hint-text">🖱 Drag to rotate the 3D view</span>
+    <!-- ── Cardiovascular Monitor — Product Card ──────────────────────────── -->
+    <section id="cardiovascular" class="product-section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center;">
+          <div class="order-2 animate-on-scroll" style="order: 2;">
+            <span class="product-tag cyan">Product 01 — Health</span>
+            <h2>Wrist-Worn Cardiovascular Monitor</h2>
+            <p>A wrist wearable that streams ECG, SpO₂, and NIBP to a hospital Patient Management System, with ML models that retrain on every doctor's verdict.</p>
+            <ul class="feature-list" style="margin-top: 1.5rem;">
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan);">1</div>
+                <div>
+                  <h4>Real-Time Vital Streaming</h4>
+                  <p>ECG, SpO₂, and NIBP readings transmitted wirelessly via ESP32 to the hospital's Patient Management System.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan);">2</div>
+                <div>
+                  <h4>ML Anomaly Detection</h4>
+                  <p>Three machine-learning models analyse incoming data and flag anomalies for doctor confirmation in real time.</p>
+                </div>
+              </li>
+              <li class="feature-item" style="background: transparent; border: none; padding-left: 0;">
+                <div class="feature-icon" style="background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan);">3</div>
+                <div>
+                  <h4>Reinforcement Learning Loop</h4>
+                  <p>Doctor verdicts feed back into the models, continuously improving diagnostic accuracy over time.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <a href="architecture.html" class="card-3d animate-on-scroll" style="text-align: center; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; order: 1; text-decoration: none; color: inherit;">
+            <div style="font-size: 6rem; margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.4));">⌚</div>
+            <h3 class="text-cyan">Remote Health Monitor</h3>
+            <p style="margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan); opacity: 0.8;">Click to open the architecture →</p>
+          </a>
         </div>
       </div>
     </section>
@@ -192,9 +198,6 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/cardiovascular.js"></script>
 </body>
 </html>
