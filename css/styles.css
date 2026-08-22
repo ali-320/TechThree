@@ -854,6 +854,108 @@ p {
   }
 }
 
+/* Drag-mode toggle button */
+.cviz-drag-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 0.6rem 1.2rem;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cviz-drag-btn:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--accent-cyan);
+}
+
+.cviz-drag-btn.active {
+  background: rgba(0, 240, 255, 0.15);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+/* Fullscreen exit button */
+.cviz-fullscreen-btn {
+  position: absolute;
+  top: 24px;
+  right: 160px;
+  padding: 0.6rem 1.2rem;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cviz-fullscreen-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--accent-red);
+}
+
+.cviz-fullscreen-btn.visible {
+  display: flex;
+}
+
+/* Fullscreen mode */
+.cviz-container.cviz-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: unset;
+  max-height: unset;
+  z-index: 9999;
+  border-radius: 0;
+  transition: height 0.35s ease, min-height 0.35s ease, max-height 0.35s ease;
+}
+
+.cviz-container.cviz-fullscreen .cviz-drag-btn {
+  top: 16px;
+  right: 16px;
+}
+
+.cviz-container.cviz-fullscreen .cviz-fullscreen-btn {
+  top: 16px;
+  right: 180px;
+}
+
+@media (max-width: 768px) {
+  .cviz-drag-btn {
+    top: 16px;
+    right: 16px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .cviz-fullscreen-btn {
+    top: 16px;
+    right: 120px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */

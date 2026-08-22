@@ -50,6 +50,14 @@
       <div class="cviz-container" id="cviz-container">
         <canvas id="cviz-canvas"></canvas>
         <div class="cviz-cross"></div>
+        <button class="cviz-drag-btn" id="cviz-drag-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m11.14 0l-2.83-2.83M9.76 9.76L6.93 6.93"></path></svg>
+          <span id="cviz-drag-text">Enable Drag</span>
+        </button>
+        <button class="cviz-fullscreen-btn" id="cviz-fullscreen-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          Exit Fullscreen
+        </button>
         <button class="cviz-back-btn" id="cviz-back">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
           Back to Hardware
