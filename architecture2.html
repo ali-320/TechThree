@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Architecture — Remote Health Monitor — Tech-3ree</title>
-  <meta name="description" content="Interactive 3D architecture of Tech-3ree's Remote Health Monitoring System — hardware and software views with orbiting sensors and data flow.">
+  <title>Architecture — Quantum Neural Network — Tech-3ree</title>
+  <meta name="description" content="Interactive 3D architecture of Tech-3ree's Hybrid Quantum Neural Network — ChEMBL data pre-processing, internet transmission, and IBM quantum computation with superposition and entanglement.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,34 +32,24 @@
   <main>
     <section class="cviz-section" style="min-height: 100vh;">
       <div style="padding: 2rem 1.5rem 1rem; text-align: center; background: var(--bg-secondary);">
-        <span class="product-tag cyan">Product 01 — Health</span>
-        <h2>Wrist-Worn Cardiovascular Monitor</h2>
-        <p style="max-width: 720px; margin: 0 auto; color: var(--text-secondary);">Interactive 3D architecture — drag to rotate, click the WiFi signal to switch between hardware and software views.</p>
+        <span class="product-tag purple">Product 02 — Drug Discovery</span>
+        <h2>Hybrid Quantum Neural Network for Drug Discovery</h2>
+        <p style="max-width: 720px; margin: 0 auto; color: var(--text-secondary);">Interactive 3D pipeline — ChEMBL bioactivity data is pre-processed classically, sent over the internet, and processed on IBM's quantum computer using superposition and entanglement.</p>
       </div>
-      <div class="cviz-container" id="cviz-container">
-        <canvas id="cviz-canvas"></canvas>
+      <div class="cviz-container" id="qviz-container">
+        <canvas id="qviz-canvas"></canvas>
         <div class="cviz-cross"></div>
-        <button class="cviz-drag-btn" id="cviz-drag-btn">
+        <button class="cviz-drag-btn" id="qviz-drag-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07l-2.83 2.83M9.76 14.24l-2.83 2.83m11.14 0l-2.83-2.83M9.76 9.76L6.93 6.93"></path></svg>
-          <span id="cviz-drag-text">Enable Drag</span>
+          <span id="qviz-drag-text">Enable Drag</span>
         </button>
-        <button class="cviz-fullscreen-btn" id="cviz-fullscreen-btn">
+        <button class="cviz-fullscreen-btn" id="qviz-fullscreen-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
           Exit Fullscreen
         </button>
-        <button class="cviz-back-btn" id="cviz-back">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          Back to Hardware
-        </button>
-        <div class="cviz-info-panel" id="cviz-info">
+        <div class="cviz-info-panel" id="qviz-info">
           <h4></h4>
           <p></p>
-        </div>
-        <div class="cviz-hint visible" id="cviz-hint">
-          <span class="cviz-hint-text">Click the WiFi signal to see the software architecture →</span>
-        </div>
-        <div class="cviz-hint visible" id="cviz-rotate-hint" style="bottom: 64px;">
-          <span class="cviz-hint-text">🖱 Drag to rotate the 3D view</span>
         </div>
       </div>
     </section>
@@ -104,6 +94,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/cardiovascular.js"></script>
+  <script src="js/quantum.js"></script>
 </body>
 </html>
