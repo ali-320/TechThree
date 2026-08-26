@@ -256,13 +256,13 @@
 
     // ── 3. Internet / WiFi (center) ─────────────────────────────────────────
     var wifi = createWiFiGroup('wifi');
-    wifi.position.set(-2.5, 0.5, 0);
+    wifi.position.set(-2.0, 0.5, 0);
     sc.add(wifi);
     sc.add(labelSpriteSmall('INTERNET', '#22C55E', 55).translateX(-2.5).translateY(2.2));
 
     // arrow classical → wifi
     var a2 = arrow(2.6, M.greenWire, 0.22);
-    a2.position.set(-5.9, 0.3, 0);
+    a2.position.set(-4.9, 0.3, 0);
     sc.add(a2);
 
     // ── 4. IBM Quantum Computer (right) ─────────────────────────────────────
